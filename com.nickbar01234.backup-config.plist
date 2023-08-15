@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+    <dict>
+        <key>Label</key>
+        <!-- TODO(nickbar01234): Change to your username -->
+        <string>com.nickbar01234.backup-config</string>
+        <key>ServiceDescription</key>
+        <string>Auto sync configs to git repository</string>
+        <key>ProgramArguments</key>
+        <array>
+            <string>zsh</string>
+            <string>-c</string>
+            <!-- TODO(nickbar01234): Change to your file path -->
+            <string>/Users/nickbar01234/config/listener.sh</string>
+        </array>
+        <key>StandardOutPath</key>
+        <!-- TODO(nickbar01234): Change to your file path -->
+        <string>/Users/nickbar01234/log/com.nickbar01234.listener.stdout</string>
+        <key>StandardErrorPath</key>
+        <!-- TODO(nickbar01234): Change to your file path -->
+        <string>/Users/nickbar01234/log/com.nickbar01234.listener.stderr</string>
+        <key>WorkingDirectory</key>
+        <!-- TODO(nickbar01234): Change to your file path -->
+        <string>/Users/nickbar01234/config</string>
+        <key>KeepAlive</key>
+        <true/>
+     </dict>
+  </plist>
