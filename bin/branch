@@ -1,0 +1,6 @@
+#!/bin/zsh
+
+# Utility function to get the current branch name
+# Example usage: git push origin $(branch)
+
+git name-rev --name-only HEAD
