@@ -55,3 +55,8 @@ I use ssh-key for authentication to Github. You can read this
 to set up your key. The script was written on the assumption that the ssh-key
 does not have a password. It's definitely not secured, but it was the quickest
 way I can think of.
+
+## Limitations
+
+The script currently only handle additions to config files. Removing files result
+in a runtime error.
