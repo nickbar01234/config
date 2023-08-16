@@ -1,4 +1,4 @@
-#!/bin/zsh
+#!/usr/bin/env zsh
 
 # TODO(nickbar01234) - Restructure configuration files for maintainability.
 
@@ -21,6 +21,7 @@ FOLDER=$(dirname ${0:a})
 # TODO(nickbar01234) - Add configuration folders
 ZSH_STORE=$FOLDER/zsh
 LVIM_STORE=$FOLDER/lvim
+BINARY_STORE=$FOLDER/bin
 
 # Maps a config file to a folder to copy to for commit
 typeset -A configs
@@ -29,13 +30,24 @@ configs=(
   $HOME/.zshrc $ZSH_STORE
   $HOME/.config/lvim/config.lua $LVIM_STORE
   $HOME/.config/lvim/init.lua $LVIM_STORE
+  $HOME/.local/bin/nickbar01234 $BINARY_STORE
 )
 
 fswatch -0 "${(@k)configs}" | while read -d "" file;
   do
     echo "[Log] $file has been modified"
+    
     # Destination to copy config file to
     folder=$configs[$file]
+    if [[ $destination = '' ]]
+    then
+      # We use dirname here instead if we want to track a folder instead
+      # of specific files
+      folder="$configs[$(dirname $file)]"
+    fi
+
+    echo $folder
+
     mkdir -p $folder
     cp $file $folder
     git add $folder
