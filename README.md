@@ -47,3 +47,11 @@ To start the script as a background task:
 status then the background task started correctly
 4. Test Github push by modifying your config file. You can check for error logs
 from the path you defined for `StandardErrorPath` in `com.<username>.backup-config.plist`
+
+### Authentication
+
+I use ssh-key for authentication to Github. You can read this
+[guide](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent)
+to set up your key. The script was written on the assumption that the ssh-key
+does not have a password. It's definitely not secured, but it was the quickest
+way I can think of.
