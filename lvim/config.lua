@@ -68,6 +68,7 @@ vim.api.nvim_create_user_command('Header',
   function ()
     local commentstring = vim.api.nvim_buf_get_option(0, "commentstring")
     local symbol = vim.split(commentstring, '%s')[0]
+    print(commentstring)
     print(symbol)
   end,
   {
