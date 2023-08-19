@@ -95,7 +95,7 @@ vim.api.nvim_create_user_command('Header',
       vim.api.nvim_feedkeys(string.format("^o %s78a*%sa/%s", escape, escape, escape), 'n', false)
       vim.api.nvim_feedkeys("^O *", 'n', false)
     else
-      error(string.format(":Header does not support %s extension", ft), 2)
+      error(string.format(":Header does not support '%s' extension", ft), 2)
     end
     vim.api.nvim_feedkeys(string.format("%s:set nopaste%s", escape, enter), 'n', false)
   end,
