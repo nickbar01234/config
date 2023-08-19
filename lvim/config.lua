@@ -73,7 +73,9 @@ lvim.builtin.which_key.mappings["zh"] = {
 --------------------------------------------------------------------------------
 -- Functions
 --------------------------------------------------------------------------------
+
 vim.api.nvim_create_user_command('Header',
+  -- TODO(nickbar01234): Add support for variable comment length?
   function ()
     local escape = vim.api.nvim_replace_termcodes("<ESC>", true, false, true)
 		local enter = vim.api.nvim_replace_termcodes("<CR>", true, false, true)
