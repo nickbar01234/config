@@ -67,7 +67,7 @@ lvim.builtin.which_key.mappings["zh"] = {
 vim.api.nvim_create_user_command('Header',
   function ()
     local commentstring = vim.api.nvim_buf_get_option(0, "commentstring")
-    local symbol = string.match(commentstring, "([%p]+)%S")
+    local symbol = string.match(commentstring, "([%p]+)%s")
     print(commentstring)
     print(symbol)
   end,
