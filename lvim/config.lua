@@ -64,9 +64,10 @@ lvim.builtin.which_key.mappings["zh"] = {
 vim.api.nvim_create_user_command('Header',
   function ()
     local escape = vim.api.nvim_replace_termcodes("<ESC>", true, false, true)
-    vim.api.nvim_feedkeys(string.format("%s:set paste", escape), 'n', false)
+		local enter = vim.api.nvim_replace_termcodes("<CR>", true, false, true)
+    vim.api.nvim_feedkeys(string.format("%s:set paste%s", escape, enter), 'n', false)
     local ft = vim.fn.expand("%:e")
-    vim.api.nvim_feedkeys(string.format("%s:set no paste", escape), 'n', false)
+    vim.api.nvim_feedkeys(string.format("%s:set nopaste", escape, enter), 'n', false)
     -- TODO(hdoan): Should handle error
     -- local commentstring = vim.api.nvim_buf_get_option(0, "commentstring")
     -- local symbols = string.match(commentstring, "([%p]+)%s")
