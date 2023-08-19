@@ -88,7 +88,7 @@ vim.api.nvim_create_user_command('Header',
       vim.api.nvim_feedkeys("^O--", 'n', false)
     elseif Array.contains({ "c", "cpp", "h" }, ft) then
       vim.api.nvim_feedkeys(string.format("i/%s79a*%s", escape, escape), 'n', false)
-      vim.api.nvim_feedkeys(string.format("^o %s78i*%sa/%s", escape, escape, escape), 'n', false)
+      vim.api.nvim_feedkeys(string.format("^o %s78a*%sa/%s", escape, escape, escape), 'n', false)
       vim.api.nvim_feedkeys("^O *", 'n', false)
     else
       error(string.format(":Header does not support %s extension", ft), 2)
