@@ -69,8 +69,9 @@ vim.api.nvim_create_user_command('Header',
     -- TODO(hdoan): Good to handle error
     local commentstring = vim.api.nvim_buf_get_option(0, "commentstring")
     local symbol = string.match(commentstring, "([%p]+)%s")
-    local comment = string.format("80i%s\\<Esc>", symbol)
+    local comment = string.format("80i%s", symbol)
     vim.api.nvim_feedkeys(comment, 'n', true)
+    vim.cmd.stopinsert()
 
   end,
   {
