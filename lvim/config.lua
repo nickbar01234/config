@@ -86,7 +86,8 @@ vim.api.nvim_create_user_command('Header',
       vim.api.nvim_feedkeys(string.format("80i-%s", escape), 'n', false)
       vim.api.nvim_feedkeys("yyp", 'n', false)
       vim.api.nvim_feedkeys("^O--", 'n', false)
-    else if Array.contains({ })
+    else if Array.contains({ "c", "cpp" }, ft) then
+      
     end
 
     vim.api.nvim_feedkeys(string.format("%s:set nopaste%s", escape, enter), 'n', false)
