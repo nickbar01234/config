@@ -86,9 +86,13 @@ vim.api.nvim_create_user_command('Header',
       vim.api.nvim_feedkeys(string.format("80i-%s", escape), 'n', false)
       vim.api.nvim_feedkeys("yyp", 'n', false)
       vim.api.nvim_feedkeys("^O--", 'n', false)
-    -- else if Array.contains({ "c", "cpp" }, ft) then
+    elseif Array.contains({ "c", "cpp", "h" }, ft) then
+      vim.api.nvim_feedkeys(string.format("i/%s79a*%s", escape, escape), 'n', false)
+      vim.api.nvim_feedkeys(string.format("^o %s78i*%sa/", escape, escape), 'n', false)
+      vim.api.nvim_feedkeys("^O *", 'n', false)
+    else
+      error(string.format(":Header does not support %s extension", ft), 2)
     end
-
     vim.api.nvim_feedkeys(string.format("%s:set nopaste%s", escape, enter), 'n', false)
   end,
   {
