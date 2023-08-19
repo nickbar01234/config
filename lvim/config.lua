@@ -66,7 +66,8 @@ lvim.builtin.which_key.mappings["zh"] = {
 -------------------------------------------------------------------------------
 vim.api.nvim_create_user_command('Header',
   function ()
-    -- local symbol = vim.split(commentstring, '%s')[0]
+    local commentstring = vim.api.nvim_buf_get_option(0, "commentstring")
+    -- local symbol = vim.split(vim.str, '%s')[0]
     print(commentstring)
   end,
   {
