@@ -66,7 +66,8 @@ lvim.builtin.which_key.mappings["zh"] = {
 -------------------------------------------------------------------------------
 vim.api.nvim_create_user_command('Header',
   function ()
-    vim.cmd("vsplit")
+    local symbol = vim.split(&commentstring, '%s', true)
+    print(symbol)
   end,
   {
     desc = "Create a pretty comment header",
