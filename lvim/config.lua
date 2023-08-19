@@ -4,10 +4,18 @@
 -- Forum: https://www.reddit.com/r/lunarvim/
 -- Discord: https://discord.com/invite/Xb9B4Ny
 
-vim.opt.runtimepath:append(",/Users/nickbar01234/.config/lvim/utils.lua")
+--------------------------------------------------------------------------------
+-- Utility package
+--------------------------------------------------------------------------------
+
+-- TODO(nickbar01234): Refactor to a different folder
+vim.opt.runtimepath:append(",/Users/nickbar01234/.config/lvim/lua-utils/")
 
 local Array = require "utils"
 
+--------------------------------------------------------------------------------
+-- Color scheme
+--------------------------------------------------------------------------------
 lvim.colorscheme = "monokai_pro"
 
 -------------------------------------------------------------------------------
@@ -78,6 +86,7 @@ vim.api.nvim_create_user_command('Header',
       vim.api.nvim_feedkeys(string.format("80i-%s", escape), 'n', false)
       vim.api.nvim_feedkeys("yyp", 'n', false)
       vim.api.nvim_feedkeys("^O--", 'n', false)
+    else if Array.contains({ })
     end
 
     vim.api.nvim_feedkeys(string.format("%s:set nopaste%s", escape, enter), 'n', false)
