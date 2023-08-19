@@ -4,9 +4,9 @@
 -- Forum: https://www.reddit.com/r/lunarvim/
 -- Discord: https://discord.com/invite/Xb9B4Ny
 
-vim.opt.runtimepath:append(",/Users/nickbar01234/.config/lvim/utils")
+vim.opt.runtimepath:append(",/Users/nickbar01234/.config/lvim/utils.lua")
 
-local Array = require "utils.lua"
+local Array = require "utils"
 
 lvim.colorscheme = "monokai_pro"
 
