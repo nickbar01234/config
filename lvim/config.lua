@@ -72,6 +72,7 @@ vim.api.nvim_create_user_command('Header',
     local comment = string.format("80i%s", symbol)
     vim.api.nvim_feedkeys(comment, 'n', true)
     vim.cmd.stopinsert()
+
   end,
   {
     desc = "Create a pretty comment header",
