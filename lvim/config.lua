@@ -5,7 +5,6 @@
 -- Discord: https://discord.com/invite/Xb9B4Ny
 
 vim.opt.runtimepath:append(",~/.config/lvim/utils.lua")
-local Array = require "utils.lua"
 
 lvim.colorscheme = "monokai_pro"
 
