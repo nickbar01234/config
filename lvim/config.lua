@@ -69,7 +69,8 @@ vim.api.nvim_create_user_command('Header',
     -- TODO(hdoan): Good to handle error
     local commentstring = vim.api.nvim_buf_get_option(0, "commentstring")
     local symbol = string.match(commentstring, "([%p]+)%s")
-    vim.cmd("80i" + symbol + "<Esc>")
+    local comment = string.format("80i%s<Esc>", symbol)
+    vim.cmd(symbol)
   end,
   {
     desc = "Create a pretty comment header",
