@@ -4,7 +4,7 @@
 -- Forum: https://www.reddit.com/r/lunarvim/
 -- Discord: https://discord.com/invite/Xb9B4Ny
 
-local Array = require("utils.lua")
+local Array = require "utils.lua"
 
 lvim.colorscheme = "monokai_pro"
 
