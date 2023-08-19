@@ -72,10 +72,10 @@ vim.api.nvim_create_user_command('Header',
     local symbol = string.sub(symbols, 0, 1)
     local escape = vim.api.nvim_replace_termcodes("<ESC>", true, false, true)
     local comment = string.format("80i%s%s", symbol, escape)
-    vim.api.nvim_feedkeys(comment, 'n', false) -- Create 80 line comment header
-    vim.api.nvim_feedkeys("yyp", 'n', false) -- yank and paste
-    vim.api.nvim_feedkeys(string.format("^O%s ", symbols), 'n', false)
-
+    -- vim.api.nvim_feedkeys(comment, 'n', false) -- Create 80 line comment header
+    -- vim.api.nvim_feedkeys("yyp", 'n', false) -- yank and paste
+    -- vim.api.nvim_feedkeys(string.format("^O%s ", symbols), 'n', false)
+    print(symbols)
   end,
   {
     desc = "Create a pretty comment header",
