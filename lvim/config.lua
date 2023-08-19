@@ -63,9 +63,9 @@ lvim.builtin.which_key.mappings["zh"] = {
 -------------------------------------------------------------------------------
 vim.api.nvim_create_user_command('Header',
   function ()
-    vim.cmd("paste")
+    vim.cmd("set paste")
     local ft = vim.fn.expand("%:e")
-    vim.cmd("no paste")
+    vim.cmd("set no paste")
     -- TODO(hdoan): Should handle error
     -- local commentstring = vim.api.nvim_buf_get_option(0, "commentstring")
     -- local symbols = string.match(commentstring, "([%p]+)%s")
