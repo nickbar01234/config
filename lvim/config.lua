@@ -9,9 +9,9 @@
 --------------------------------------------------------------------------------
 
 -- TODO(nickbar01234): Refactor to a different folder
-vim.opt.runtimepath:append(",/Users/nickbar01234/.config/lvim/lua-utils/array.lua")
+-- vim.opt.runtimepath:append(",/Users/nickbar01234/.config/lvim/lua-utils/array.lua")
 
-local Array = require "array"
+-- local Array = require "array"
 
 --------------------------------------------------------------------------------
 -- Color scheme
