@@ -9,7 +9,7 @@
 --------------------------------------------------------------------------------
 
 -- TODO(nickbar01234): Refactor to a different folder
-vim.opt.runtimepath:append(",/Users/nickbar01234/.config/lvim/lua-utils/array.lua")
+vim.opt.runtimepath:append(",/Users/nickbar01234/.config/lvim/lua-utils")
 
 local Array = require "array"
 
