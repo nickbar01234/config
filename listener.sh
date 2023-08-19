@@ -46,7 +46,6 @@ fswatch -0 "${(@k)configs}" | while read -d "" file;
       folder="$configs[$(dirname $file)]"
     fi
 
-    echo $folder
     mkdir -p $folder
     cp $file $folder
     git add $folder
