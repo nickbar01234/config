@@ -86,24 +86,10 @@ vim.api.nvim_create_user_command('Header',
       vim.api.nvim_feedkeys(string.format("80i-%s", escape), 'n', false)
       vim.api.nvim_feedkeys("yyp", 'n', false)
       vim.api.nvim_feedkeys("^O--", 'n', false)
-    else if Array.contains({ "c", "cpp" }, ft) then
-      
+    -- else if Array.contains({ "c", "cpp" }, ft) then
     end
 
     vim.api.nvim_feedkeys(string.format("%s:set nopaste%s", escape, enter), 'n', false)
-    -- TODO(hdoan): Should handle error
-    -- local commentstring = vim.api.nvim_buf_get_option(0, "commentstring")
-    -- local symbols = string.match(commentstring, "([%p]+)%s")
-    -- local symbol = string.sub(symbols, 0, 1)
-    -- local escape = vim.api.nvim_replace_termcodes("<ESC>", true, false, true)
-    -- local comment = string.format("80i%s%s", symbol, escape)
-
-    -- -- Create 80 line comment header
-    -- vim.api.nvim_feedkeys(comment, 'n', false)
-    -- -- Yank and paste
-    -- vim.api.nvim_feedkeys("yyp", 'n', false)
-    -- -- Insert a line above
-    -- vim.api.nvim_feedkeys(string.format("^O ", symbols), 'n', false)
   end,
   {
     desc = "Create a pretty comment header. This command assumes that lvim is configured with comment togglers",
