@@ -6,6 +6,8 @@
 alias vim=lvim
 # Utility
 alias c=clear
+# Default python3
+alias python=python3
 # Editor
 export EDITOR=lvim
 # Quickly edit config
