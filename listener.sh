@@ -39,13 +39,14 @@ fswatch -0 "${(@k)configs}" | while read -d "" file;
     
     # Destination to copy config file to
     folder=$configs[$file]
-    if [[ $destination = '' ]]
+    if [[ $folder = '' ]]
     then
       # We use dirname here instead if we want to track a folder instead
       # of specific files
       folder="$configs[$(dirname $file)]"
     fi
 
+    echo $folder
     mkdir -p $folder
     cp $file $folder
     git add $folder
