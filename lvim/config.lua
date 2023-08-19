@@ -5,6 +5,7 @@
 -- Discord: https://discord.com/invite/Xb9B4Ny
 
 vim.api.nvim_command("set runtimepath^=~/.config/lvim/utils.lua")
+vim.api.nvim_command("let &packagepath = &runtimepath")
 local Array = require "utils.lua"
 
 lvim.colorscheme = "monokai_pro"
