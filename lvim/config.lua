@@ -4,8 +4,7 @@
 -- Forum: https://www.reddit.com/r/lunarvim/
 -- Discord: https://discord.com/invite/Xb9B4Ny
 
-vim.api.nvim_command("set runtimepath^=~/.config/lvim/utils.lua")
-vim.api.nvim_command("let &packpath = &runtimepath")
+vim.opt.runtimepath:append(",~/.config/lvim/utils.lua")
 local Array = require "utils.lua"
 
 lvim.colorscheme = "monokai_pro"
