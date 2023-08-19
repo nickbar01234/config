@@ -70,7 +70,8 @@ vim.api.nvim_create_user_command('Header',
     local commentstring = vim.api.nvim_buf_get_option(0, "commentstring")
     local symbol = string.match(commentstring, "([%p]+)%s")
     local comment = string.format("80i%s<ESC>", symbol)
-    vim.api.nvim_feedkeys(comment, 'n', true)
+    vim.api.nvim_feedkeys(comment, 'n', false)
+
   end,
   {
     desc = "Create a pretty comment header",
