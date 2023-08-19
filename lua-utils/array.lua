@@ -4,8 +4,8 @@ local Array = {}
 
 -- Returns true if array contains value and otherwise false
 --
--- @params array string[]
--- @param value string
+-- @params array any[]
+-- @param value any
 -- @return boolean
 function Array.contains(array, value)
   for _, v in ipairs(array) do
