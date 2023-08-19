@@ -65,8 +65,17 @@ vim.api.nvim_create_user_command('Header',
   function ()
     local escape = vim.api.nvim_replace_termcodes("<ESC>", true, false, true)
 		local enter = vim.api.nvim_replace_termcodes("<CR>", true, false, true)
+
     vim.api.nvim_feedkeys(string.format("%s:set paste%s", escape, enter), 'n', false)
+
     local ft = vim.fn.expand("%:e")
+
+    if ft == "lua" then
+      vim.api.nvim_feedkeys(string.format("80i-%s", escape), 'n', false)
+      vim.api.nvim_feedkeys("yyp", 'n', false)
+      vim.api.nvim_feedkeys("^O--", 'n', false)
+    end
+
     vim.api.nvim_feedkeys(string.format("%s:set nopaste%s", escape, enter), 'n', false)
     -- TODO(hdoan): Should handle error
     -- local commentstring = vim.api.nvim_buf_get_option(0, "commentstring")
