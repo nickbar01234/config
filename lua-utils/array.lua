@@ -4,7 +4,7 @@ local Array = {}
 
 -- Returns true if array contains value and otherwise false
 --
--- @params array any[]
+-- @param array any[]
 -- @param value any
 -- @return boolean
 function Array.contains(array, value)
