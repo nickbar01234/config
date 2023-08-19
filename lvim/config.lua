@@ -89,7 +89,7 @@ vim.api.nvim_create_user_command('Header',
     elseif Array.contains({ "py", "sh" }, ft) then
       vim.api.nvim_feedkeys(string.format("80i#%s", escape), 'n', false)
       vim.api.nvim_feedkeys("yyp", 'n', false)
-      vim.api.nvim_feedkeys("^O--", 'n', false)
+      vim.api.nvim_feedkeys("^O# 'n', false)
     elseif Array.contains({ "c", "cpp", "h" }, ft) then
       vim.api.nvim_feedkeys(string.format("i/%s79a*%s", escape, escape), 'n', false)
       vim.api.nvim_feedkeys(string.format("^o %s78a*%sa/%s", escape, escape, escape), 'n', false)
