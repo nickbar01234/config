@@ -66,18 +66,22 @@ lvim.builtin.which_key.mappings["zh"] = {
 -------------------------------------------------------------------------------
 vim.api.nvim_create_user_command('Header',
   function ()
-    -- TODO(hdoan): Good to handle error
+    -- TODO(hdoan): Should handle error
     local commentstring = vim.api.nvim_buf_get_option(0, "commentstring")
     local symbols = string.match(commentstring, "([%p]+)%s")
     local symbol = string.sub(symbols, 0, 1)
     local escape = vim.api.nvim_replace_termcodes("<ESC>", true, false, true)
     local comment = string.format("80i%s%s", symbol, escape)
-    vim.api.nvim_feedkeys(comment, 'n', false) -- Create 80 line comment header
-    vim.api.nvim_feedkeys("yyp", 'n', false) -- yank and paste
+
+    -- Create 80 line comment header
+    vim.api.nvim_feedkeys(comment, 'n', false)
+    -- Yank and paste
+    vim.api.nvim_feedkeys("yyp", 'n', false)
+    -- Insert a line above
     vim.api.nvim_feedkeys(string.format("^O ", symbols), 'n', false)
   end,
   {
-    desc = "Create a pretty comment header",
+    desc = "Create a pretty comment header. This command assumes that lvim is configured with comment togglers",
     nargs = 0
   }
 )
