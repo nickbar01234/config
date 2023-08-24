@@ -11,7 +11,7 @@
 -- TODO(nickbar01234): Refactor to a different folder
 -- vim.opt.runtimepath:append(",/Users/nickbar01234/.config/lvim/lua-utils")
 
-local Array = require("lvim.lua-utils.array")
+local Array = require("lua-utils.array")
 
 --------------------------------------------------------------------------------
 -- Color scheme
