@@ -13,5 +13,5 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 -- TODO(nickbar01234): Refactor to a different folder
-vim.opt.rtp:prepend(",/Users/nickbar01234/.config/lvim/lua-utils")
+vim.opt.rtp:append(",/Users/nickbar01234/.config/lvim/lua-utils")
 
