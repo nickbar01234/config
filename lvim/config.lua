@@ -4,14 +4,28 @@
 -- Forum: https://www.reddit.com/r/lunarvim/
 -- Discord: https://discord.com/invite/Xb9B4Ny
 
+
+-- Utility functions to work with arrays 
+
+local Array = {}
+
+-- Returns true if array contains value and otherwise false
+--
+---@param array any[]
+---@param value any
+---@return boolean
+function Array.contains(array, value)
+  for _, v in ipairs(array) do
+    if v == value then
+      return true
+    end
+  end
+  return false
+end
+
 --------------------------------------------------------------------------------
 -- Utility package
 --------------------------------------------------------------------------------
-
--- TODO(nickbar01234): Refactor to a different folder
--- vim.opt.runtimepath:append(",/Users/nickbar01234/.config/lvim/lua-utils")
-
--- local Array = require("lua-utils.array")
 
 --------------------------------------------------------------------------------
 -- Color scheme
