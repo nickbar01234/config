@@ -3,6 +3,7 @@ set relativenumber
 nnoremap <SPACE> <Nop>
 let mapleader=" "
 
+" Remap switch pane
 nnoremap <Leader>h <C-w>h 
 nnoremap <Leader>j <C-w>j
 nnoremap <Leader>k <C-w>k
