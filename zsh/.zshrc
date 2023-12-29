@@ -34,3 +34,11 @@ plugins=(
 source "$ZSH/oh-my-zsh.sh"
 # zsh syntax highlighting
 source /Users/nickbar01234/zsh-plugin/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+# pnpm
+export PNPM_HOME="/Users/nickbar01234/Library/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
