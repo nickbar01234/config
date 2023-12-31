@@ -14,9 +14,6 @@ export EDITOR=lvim
 alias zshrc="vim ~/.zshrc"
 alias zshenv="vim ~/.zshenv"
 
-# Disable pager for git log
-unset LESS
-
 ###############################################################################
 # oh-my-zsh
 ###############################################################################
@@ -45,3 +42,6 @@ case ":$PATH:" in
   *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
 # pnpm end
+
+# Disable pager for git log
+unset LESS
