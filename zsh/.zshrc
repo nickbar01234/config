@@ -14,6 +14,9 @@ export EDITOR=lvim
 alias zshrc="vim ~/.zshrc"
 alias zshenv="vim ~/.zshenv"
 
+# Disable pager for git log
+unset LESS
+
 ###############################################################################
 # oh-my-zsh
 ###############################################################################
