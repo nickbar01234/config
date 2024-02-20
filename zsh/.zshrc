@@ -2,10 +2,10 @@
 # Shell
 ###############################################################################
 
-# Set vim to lvim
-alias vim=lvim
 # Utility
+alias vim=lvim
 alias c=clear
+alias q=exit
 # Default python3
 alias python=python3
 # Editor
