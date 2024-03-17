@@ -19,7 +19,9 @@ alias zshenv="vim ~/.zshenv"
 ###############################################################################
 
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME=gnzh
+ZSH_THEME=jaischeema
+ZSH_THEME="powerlevel9k/powerlevel9k"
+
 # zsh installation path
 export ZSH="$HOME/.oh-my-zsh"
 [ -f /opt/homebrew/etc/profile.d/autojump.sh ] && . /opt/homebrew/etc/profile.d/autojump.sh
@@ -29,11 +31,12 @@ plugins=(
   common-aliases # https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/common-aliases
   git # https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/git
   autojump # j <file | folder>
+  zsh-syntax-highlighting
 )
 # Apply oh-my-zsh
 source "$ZSH/oh-my-zsh.sh"
 # zsh syntax highlighting
-source /Users/nickbar01234/zsh-plugin/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+# source /Users/nickbar01234/zsh-plugin/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # pnpm
 export PNPM_HOME="/Users/nickbar01234/Library/pnpm"
@@ -45,3 +48,7 @@ esac
 
 # Disable pager for git log
 unset LESS
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
