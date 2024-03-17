@@ -19,8 +19,7 @@ alias zshenv="vim ~/.zshenv"
 ###############################################################################
 
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-#ZSH_THEME=jaischeema
-ZSH_THEME="powerlevel9k/powerlevel9k"
+ZSH_THEME=jaischeema
 
 # zsh installation path
 export ZSH="$HOME/.oh-my-zsh"
