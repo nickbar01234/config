@@ -50,4 +50,22 @@ else
   git_part=""
 fi
 
-printf "${green}%s${reset} %s%s" "$display_dir" "$git_part" "$model_part"
+# Token usage from context_window (only shown after first API call)
+# used_percentage and context_window_size are reliable pre-calculated fields.
+# Derive token count as used_percentage * context_window_size / 100 to match
+# what the percentage reflects (cumulative session context, not a single call).
+# current_usage.input_tokens is only the last individual API call — not useful here.
+token_part=""
+used_pct=$(echo "$input" | jq -r '.context_window.used_percentage // empty')
+window_size=$(echo "$input" | jq -r '.context_window.context_window_size // empty')
+if [ -n "$used_pct" ] && [ -n "$window_size" ]; then
+  # Derive token count from percentage * window size
+  input_tokens=$(awk "BEGIN { printf \"%.0f\", $used_pct * $window_size / 100 }")
+  # Format as compact numbers: e.g. 45k / 200k
+  fmt_tokens=$(awk "BEGIN { t=$input_tokens; if(t>=1000) printf \"%.0fk\", t/1000; else printf \"%d\", t }")
+  fmt_window=$(awk "BEGIN { w=$window_size; if(w>=1000) printf \"%.0fk\", w/1000; else printf \"%d\", w }")
+  pct_int=$(printf "%.0f" "$used_pct")
+  token_part=$(printf "${red}[ctx:%s/%s %d%%]${reset} " "$fmt_tokens" "$fmt_window" "$pct_int")
+fi
+
+printf "${green}%s${reset} %s\n%s%s" "$display_dir" "$git_part" "$model_part" "$token_part"
